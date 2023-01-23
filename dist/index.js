@@ -28,8 +28,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv = __importStar(require("dotenv"));
+//TODAS LAS INSTALACIONES
 //Para usar typescript para algo mucho mas tipado y seguro
 //npm i -D typescript @types/express @types/node
+//npm i -D webpack webpack-cli webpack node-externals webpack-shell-plugin
+//npm i -D eslint jest ts-jest @types/jest supertest
 //npx tsc --init
 //Configuration .env file
 dotenv.config();
@@ -39,9 +42,9 @@ const port = process.env.PORT || 9999;
 //Define the first Route of APP
 app.get("/", (request, response) => {
     //Send hello World
-    response.send("Welcome to my API RESTful: Express + TS + Nodemon + Jest + SWAGGER + Mongoose");
+    // response.send("Welcome to my API RESTful: Express + TS + Nodemon + Jest + SWAGGER + Mongoose");
+    response.json({ message: "Goodbye, world" });
 });
-//Define the first Route of APP
 app.get("/hello", (request, response) => {
     //Send hello World
     response.send("Hello World");

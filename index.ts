@@ -18,7 +18,10 @@ const port: string | number = process.env.PORT || 9999;
 //Define the first Route of APP
 app.get("/", (request:Request, response:Response) => {
    //Send hello World
-   response.send("Welcome to my API RESTful: Express + TS + Nodemon + Jest + SWAGGER + Mongoose");
+   // response.send("Welcome to my API RESTful: Express + TS + Nodemon + Jest + SWAGGER + Mongoose");
+
+   response.json({message: "Goodbye, world"});
+
  });
  
 
