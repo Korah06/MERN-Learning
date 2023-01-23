@@ -25,9 +25,10 @@ app.get("/", (request:Request, response:Response) => {
  });
  
 
-app.get("/hello", (request:Request, response:Response) => {
+app.get("/hello/:name?", (request:Request, response:Response) => {
    //Send hello World
-   response.send("Hello World");
+   const name = request.params.name ? request.params.name : "anonimo";
+   response.send(`Hello ${name}` );
  });
 
 //Execute APP and Listen requests to Port

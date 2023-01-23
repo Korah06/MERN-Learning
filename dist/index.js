@@ -45,9 +45,10 @@ app.get("/", (request, response) => {
     // response.send("Welcome to my API RESTful: Express + TS + Nodemon + Jest + SWAGGER + Mongoose");
     response.json({ message: "Goodbye, world" });
 });
-app.get("/hello", (request, response) => {
+app.get("/hello/:name?", (request, response) => {
     //Send hello World
-    response.send("Hello World");
+    const name = request.params.name ? request.params.name : "anonimo";
+    response.send(`Hello ${name}`);
 });
 //Execute APP and Listen requests to Port
 app.listen(port, () => console.log(`Express server running at http://localhost:${port}`));
